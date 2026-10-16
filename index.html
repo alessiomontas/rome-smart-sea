@@ -1,0 +1,1005 @@
+<title>Rome Smart Sea</title>
+<meta name="description" content="La guida dell'appartamento Rome Smart Sea — Via delle Rande 6, Edificio A, Interno 8, Lido di Ostia.">
+<meta name="theme-color" content="#1A1713">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* ═══════════ fondamenta ═══════════ */
+:root{
+  --shell:#1A1713; --surface:#FBF8F3; --surface-2:#F3EEE4;
+  --ink:#2B251E; --ink-2:#6E6355; --ink-3:#A2988A;
+  --hair:#E8E1D4; --hair-2:#F0EADE;
+  --gold:#A8843F; --gold-lit:#C9A769; --gold-wash:#F6EFDE;
+  --sage:#6F7D66; --terra:#A3493A; --ico:#DFD2B6;
+  --glass:rgba(26,23,19,.76);
+  --wifi-bg:#2B251E; --wifi-fg:#FBF8F3;
+  --morbida:0 1px 2px rgba(43,37,30,.04),0 10px 30px rgba(43,37,30,.07);
+  --disp:"Marcellus",Georgia,serif;
+  --ui:"Manrope",-apple-system,"Segoe UI",sans-serif;
+  --col:520px; --gut:22px; --tondo:20px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --surface:#1D1A15; --surface-2:#262118;
+    --ink:#F4EFE5; --ink-2:#C0B5A3; --ink-3:#8C8273;
+    --hair:#342D23; --hair-2:#2A241B;
+    --gold:#CFAC67; --gold-lit:#E0C38A; --gold-wash:#2C2518;
+    --sage:#93A189; --terra:#DA8571; --ico:#4C4232;
+    --wifi-bg:#262118; --wifi-fg:#F4EFE5;
+    --morbida:0 1px 2px rgba(0,0,0,.4),0 12px 36px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --surface:#1D1A15; --surface-2:#262118;
+  --ink:#F4EFE5; --ink-2:#C0B5A3; --ink-3:#8C8273;
+  --hair:#342D23; --hair-2:#2A241B;
+  --gold:#CFAC67; --gold-lit:#E0C38A; --gold-wash:#2C2518;
+  --sage:#93A189; --terra:#DA8571; --ico:#4C4232;
+  --wifi-bg:#262118; --wifi-fg:#F4EFE5;
+  --morbida:0 1px 2px rgba(0,0,0,.4),0 12px 36px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--shell);color:var(--ink);font-family:var(--ui);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;overflow-x:hidden}
+body.fermo{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;font-family:var(--ui)}
+img,video{display:block}
+:focus-visible{outline:1.5px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* ═══════════ lo sfondo ═══════════ */
+.backdrop{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--shell)}
+.backdrop figure{position:absolute;inset:0;margin:0;background-size:cover;
+  background-position:50% 44%;opacity:1;animation:piano 33s infinite}
+.backdrop figure:nth-child(2){animation:alterna 33s infinite 11s;background-position:50% 56%}
+.backdrop figure:nth-child(3){animation:alterna 33s infinite 22s;background-position:50% 50%}
+@keyframes piano{
+  0%{transform:scale(1.02)} 50%{transform:scale(1.08)} 100%{transform:scale(1.02)}
+}
+@keyframes alterna{
+  0%{opacity:0;transform:scale(1.02)} 6%{opacity:1}
+  27%{opacity:1;transform:scale(1.08)} 33%{opacity:0;transform:scale(1.085)}
+  100%{opacity:0;transform:scale(1.02)}
+}
+.veil{position:absolute;inset:0;
+  background:linear-gradient(178deg,rgba(26,23,19,.5) 0%,rgba(26,23,19,.12) 30%,
+    rgba(26,23,19,.46) 64%,rgba(26,23,19,.92) 100%)}
+@media (prefers-reduced-motion:reduce){
+  .backdrop figure{animation:none;opacity:0} .backdrop figure:nth-child(1){opacity:1}
+}
+
+/* ═══════════ barra alta ═══════════ */
+.top{position:fixed;top:0;left:0;right:0;z-index:40;background:transparent;
+  transition:background .35s ease,border-color .35s ease;border-bottom:1px solid transparent}
+.top.posata{background:color-mix(in srgb,var(--surface) 92%,transparent);
+  backdrop-filter:saturate(1.3) blur(16px);-webkit-backdrop-filter:saturate(1.3) blur(16px);
+  border-bottom-color:var(--hair)}
+.top-in{max-width:var(--col);margin:0 auto;padding:12px var(--gut);
+  display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sigla{font-family:var(--disp);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#F4EFE5;white-space:nowrap;text-shadow:0 1px 8px rgba(0,0,0,.55)}
+.top.posata .sigla{color:var(--ink);text-shadow:none}
+.langs{display:flex;gap:1px;background:rgba(244,239,229,.14);padding:2px;border-radius:999px}
+.langs button{font-size:10.5px;font-weight:700;letter-spacing:.08em;background:none;border:0;
+  color:rgba(244,239,229,.74);padding:5px 8px;cursor:pointer;border-radius:999px;
+  transition:background .25s,color .25s}
+.langs button[aria-current="true"]{background:#F4EFE5;color:#2B251E}
+.top.posata .langs{background:var(--surface-2)}
+.top.posata .langs button{color:var(--ink-3)}
+.top.posata .langs button[aria-current="true"]{background:var(--ink);color:var(--surface)}
+
+/* ═══════════ apertura ═══════════ */
+.hero{position:relative;z-index:1;max-width:var(--col);margin:0 auto;
+  min-height:min(50svh,430px);display:flex;flex-direction:column;justify-content:flex-end;
+  padding:90px var(--gut) 34px;color:#F7F3EA}
+.benv{font-size:10px;letter-spacing:.34em;text-transform:uppercase;
+  color:#F2DFB4;margin:0 0 14px;
+  text-shadow:0 1px 3px rgba(26,23,19,.9),0 2px 14px rgba(26,23,19,.8)}
+.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(38px,11vw,54px);
+  line-height:1.04;letter-spacing:.015em;margin:0;text-wrap:balance;
+  text-shadow:0 2px 28px rgba(0,0,0,.45)}
+.hero .dove{margin:14px 0 0;font-size:12.5px;font-weight:500;color:rgba(247,243,234,.84);
+  line-height:1.6;letter-spacing:.01em;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+
+/* ═══════════ il foglio ═══════════ */
+.sheet{position:relative;z-index:1;max-width:var(--col);margin:0 auto;
+  background:color-mix(in srgb,var(--surface) 85%,transparent);border-radius:26px 26px 0 0;
+  box-shadow:0 -16px 54px rgba(0,0,0,.38);padding:6px var(--gut) 34px}
+.maniglia{width:36px;height:4px;border-radius:99px;background:var(--hair);margin:10px auto 22px}
+
+/* ═══════════ la fascia essenziale ═══════════ */
+.essenziale{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);
+  border:1px solid var(--hair);border-radius:var(--tondo);overflow:hidden;margin-bottom:12px}
+.essenziale > *{background:var(--surface);padding:15px 16px 14px;text-align:left;border:0}
+.essenziale .k{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;font-weight:600}
+.essenziale .v{font-family:var(--disp);font-size:27px;line-height:1.08;margin:7px 0 0;
+  font-variant-numeric:tabular-nums;color:var(--ink)}
+.rete{grid-column:1/-1;display:flex;align-items:center;gap:13px;cursor:pointer;width:100%}
+.rete .bollo{width:38px;height:38px;flex:0 0 38px;border-radius:50%;background:var(--gold-wash);
+  display:grid;place-items:center}
+.rete .bollo svg{width:18px;height:18px;stroke:var(--gold);stroke-width:1.7;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.rete .testo{flex:1;min-width:0}
+.rete .k{margin-bottom:3px}
+.rete .pw{font-size:15px;font-weight:700;letter-spacing:.02em;color:var(--ink);
+  display:block;line-height:1.25}
+.rete .fai{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  font-weight:700;white-space:nowrap}
+
+/* ═══════════ le categorie ═══════════ */
+.categorie{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cat{position:relative;display:block;border:0;padding:0;cursor:pointer;overflow:hidden;
+  border-radius:var(--tondo);background:var(--surface-2);box-shadow:var(--morbida);
+  transition:transform .22s cubic-bezier(.22,.61,.36,1)}
+.cat:active{transform:scale(.985)}
+.cat.larga{grid-column:1/-1}
+.cat img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.cat.larga img{aspect-ratio:16/10}
+.cat .vel{position:absolute;inset:0;
+  background:linear-gradient(177deg,rgba(26,23,19,.04) 34%,rgba(26,23,19,.52) 72%,rgba(26,23,19,.84) 100%)}
+.cat .lab{position:absolute;left:0;right:0;bottom:0;padding:13px 14px 14px;text-align:left;color:#F7F3EA}
+.cat .nome{display:block;font-family:var(--disp);font-size:17px;line-height:1.18;
+  letter-spacing:.012em}
+.cat.larga .nome{font-size:21px}
+.cat .sotto{display:block;font-size:11px;font-weight:500;color:rgba(247,243,234,.76);
+  margin-top:4px;line-height:1.35;letter-spacing:.01em}
+.cat .segno{position:absolute;top:12px;right:12px;width:27px;height:27px;border-radius:50%;
+  background:rgba(247,243,234,.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:grid;place-items:center}
+.cat .segno svg{width:12px;height:12px;stroke:#F7F3EA;stroke-width:2.2;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* le tessere col disegno: niente fotografia, un segno appena piu' chiaro del fondo */
+.cat.disegnata{aspect-ratio:1/1;display:flex;flex-direction:column;padding:15px;
+  background:var(--surface-2);border:1px solid var(--hair-2);box-shadow:none}
+.cat.disegnata .disegno{flex:1;width:100%;display:grid;place-items:center}
+.cat.disegnata .disegno svg{width:60px;height:60px;stroke:var(--ico);stroke-width:1;
+  fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cat.disegnata .lab{position:static;padding:0;width:100%;color:var(--ink)}
+.cat.disegnata .nome{color:var(--ink);font-size:16px}
+.cat.disegnata .sotto{color:var(--ink-3)}
+.cat.disegnata .segno{background:var(--surface);backdrop-filter:none;-webkit-backdrop-filter:none}
+.cat.disegnata .segno svg{stroke:var(--ink-3);width:12px;height:12px}
+
+/* la scheda sobria delle emergenze */
+.cat.sos{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:16px;
+  background:var(--surface);border:1px solid var(--hair);box-shadow:none}
+.cat.sos .bollo{width:40px;height:40px;flex:0 0 40px;border-radius:50%;
+  background:color-mix(in srgb,var(--terra) 12%,transparent);display:grid;place-items:center}
+.cat.sos .bollo svg{width:19px;height:19px;stroke:var(--terra);stroke-width:1.8;fill:none;
+  stroke-linecap:round}
+.cat.sos .lab{position:static;padding:0;color:var(--ink);flex:1}
+.cat.sos .nome{font-size:16px;color:var(--ink)}
+.cat.sos .sotto{color:var(--ink-3);font-variant-numeric:tabular-nums}
+.cat.sos .segno{position:static;background:var(--surface-2)}
+.cat.sos .segno svg{stroke:var(--ink-3)}
+
+/* ═══════════ la finestra ═══════════ */
+.velo{position:fixed;inset:0;z-index:60;background:rgba(18,15,11,.5);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;transition:opacity .3s ease}
+.velo.su{opacity:1}
+/* Il pop-up resta pieno: appena un velo di vetro, niente fotografie dentro.
+   La trasparenza vera sta nel foglio della pagina, non qui. */
+.modale{position:fixed;left:0;right:0;bottom:0;z-index:61;max-width:var(--col);margin:0 auto;
+  background:color-mix(in srgb,var(--surface) 95%,transparent);
+  backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);
+  overflow:hidden;border-radius:26px 26px 0 0;max-height:90svh;
+  display:flex;flex-direction:column;box-shadow:0 -12px 56px rgba(0,0,0,.42);
+  transform:translateY(102%);transition:transform .34s cubic-bezier(.22,.61,.36,1)}
+.modale.su{transform:translateY(0)}
+.modale-top{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:16px var(--gut) 13px;border-bottom:1px solid var(--hair);flex:0 0 auto}
+.modale-top h2{font-family:var(--disp);font-weight:400;font-size:21px;margin:0;
+  letter-spacing:.012em;line-height:1.2}
+.chiudi{width:32px;height:32px;border-radius:50%;border:0;background:var(--surface-2);
+  color:var(--ink-2);display:grid;place-items:center;cursor:pointer;flex:0 0 32px}
+.chiudi svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round}
+.modale-corpo{overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:16px var(--gut) calc(28px + env(safe-area-inset-bottom,0))}
+@media (prefers-reduced-motion:reduce){ .modale,.velo{transition:none} }
+
+.dida{margin:0 0 16px;font-size:13px;color:var(--ink-3);line-height:1.6;max-width:44ch}
+.occhiello{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  font-weight:700;margin:26px 0 10px}
+.occhiello:first-child{margin-top:0}
+
+/* ═══════════ il video ═══════════ */
+.cinema{border-radius:var(--tondo);overflow:hidden;box-shadow:var(--morbida);
+  background:color-mix(in srgb,var(--shell) 85%,transparent)}
+.cinema video{width:100%;aspect-ratio:9/16;max-height:62svh;object-fit:contain;
+  background:transparent}
+.sotto-video{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:11px;padding:0 2px}
+.sotto-video .durata{font-size:11.5px;color:var(--ink-3);font-weight:500;letter-spacing:.01em}
+.scarica{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  letter-spacing:.04em;color:var(--gold);border:0;border-bottom:1px solid var(--gold);
+  background:none;padding:0 0 3px;cursor:pointer}
+.scarica[disabled]{opacity:.5;cursor:default}
+.scarica svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══════════ i passi, con le fotografie ═══════════ */
+.passi{list-style:none;margin:0;padding:0;counter-reset:p}
+.passi li{counter-increment:p;display:grid;grid-template-columns:66px 1fr;gap:14px;
+  padding:14px 0;border-bottom:1px solid var(--hair-2);align-items:start}
+.passi li:last-child{border-bottom:0;padding-bottom:0}
+.passi .foto{position:relative;width:66px;height:66px;border-radius:14px;overflow:hidden;
+  background:var(--surface-2)}
+.passi .foto img{width:100%;height:100%;object-fit:cover}
+.passi .foto i{position:absolute;left:0;bottom:0;width:21px;height:21px;
+  background:var(--gold);color:#FBF8F3;font-style:normal;font-size:11px;font-weight:700;
+  display:grid;place-items:center;border-radius:0 10px 0 14px}
+.passi b{display:block;font-size:14.5px;font-weight:600;line-height:1.4}
+.passi span{display:block;font-size:13px;color:var(--ink-2);margin-top:4px;line-height:1.6}
+.passi mark{background:var(--gold-wash);color:var(--ink);font-weight:700;padding:1px 6px;
+  border-radius:5px;white-space:nowrap}
+.avviso{display:flex;gap:11px;align-items:flex-start;margin-top:18px;padding:14px 16px;
+  background:var(--gold-wash);border-radius:16px;font-size:12.5px;color:var(--ink-2);line-height:1.6}
+.avviso svg{width:16px;height:16px;flex:0 0 16px;margin-top:3px;stroke:var(--gold);
+  stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══════════ mappa ═══════════ */
+.carta{position:relative;display:block;border-radius:var(--tondo);overflow:hidden;
+  box-shadow:var(--morbida);background:var(--surface-2);margin-bottom:4px}
+.carta img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.carta .ombra{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(26,23,19,0) 42%,rgba(26,23,19,.8) 100%)}
+.carta .scritta{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;color:#F7F3EA;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.carta .via{font-family:var(--disp);font-size:17px;line-height:1.2}
+.carta .zona{display:block;font-family:var(--ui);font-size:11px;font-weight:500;
+  opacity:.8;margin-top:3px}
+.carta .vai{flex:0 0 auto;display:flex;align-items:center;gap:5px;font-size:9.5px;
+  font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-lit);padding-bottom:3px}
+.carta .vai svg{width:12px;height:12px;stroke:currentColor;stroke-width:2.2;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══════════ righe ═══════════ */
+.riga{display:flex;align-items:center;gap:14px;padding:12px 0;
+  border-bottom:1px solid var(--hair-2);width:100%}
+.riga:last-child{border-bottom:0}
+.riga:active{opacity:.6}
+.riga .fig{width:50px;height:50px;flex:0 0 50px;border-radius:13px;object-fit:cover;
+  background:var(--surface-2)}
+.riga .ico{width:50px;height:50px;flex:0 0 50px;border-radius:13px;background:var(--gold-wash);
+  display:grid;place-items:center}
+.riga .ico svg{width:20px;height:20px;stroke:var(--gold);stroke-width:1.6;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.riga .corpo{flex:1;min-width:0}
+.riga .nome{display:block;font-size:14.5px;font-weight:600;line-height:1.35;color:var(--ink)}
+.riga .nota{display:block;font-size:12px;color:var(--ink-3);margin-top:2px;line-height:1.45}
+.riga .vai{flex:0 0 auto;display:flex;align-items:center;gap:5px;font-size:9.5px;
+  font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.riga .vai svg{width:12px;height:12px;stroke:currentColor;stroke-width:2.2;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══════════ wi-fi dentro la casa ═══════════ */
+.wifi{background:var(--wifi-bg);color:var(--wifi-fg);border-radius:var(--tondo);
+  padding:18px;box-shadow:var(--morbida)}
+.wifi dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;align-items:baseline}
+.wifi dt{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;
+  white-space:nowrap;font-weight:600}
+.wifi dd{margin:0;font-size:15.5px;font-weight:700;text-align:right;word-break:break-all}
+.copia{margin-top:16px;width:100%;padding:12px;border-radius:12px;cursor:pointer;
+  background:var(--gold-lit);color:#2B251E;border:0;font-size:13px;font-weight:700;
+  letter-spacing:.03em;transition:transform .16s ease}
+.copia:active{transform:scale(.985)}
+.copia[data-fatto="1"]{background:var(--sage);color:#FBF8F3}
+
+.dot{display:flex;flex-wrap:wrap;gap:7px}
+.dot span{font-size:12px;font-weight:500;color:var(--ink-2);background:var(--surface-2);
+  padding:7px 13px;border-radius:999px;line-height:1.3}
+
+.regole{list-style:none;margin:0;padding:0;counter-reset:r}
+.regole li{counter-increment:r;display:grid;grid-template-columns:22px 1fr;gap:13px;
+  padding:14px 0;border-bottom:1px solid var(--hair-2)}
+.regole li:last-child{border-bottom:0;padding-bottom:0}
+.regole li::before{content:counter(r,decimal-leading-zero);font-size:10.5px;font-weight:700;
+  color:var(--gold);padding-top:4px;font-variant-numeric:tabular-nums}
+/* il numero sta nella prima colonna, titolo e testo nella seconda:
+   senza grid-column il testo finiva nella colonna da 22 px, una parola per riga */
+.regole b{grid-column:2;display:block;font-size:14px;font-weight:600;line-height:1.4}
+.regole li > span{grid-column:2;display:block;font-size:12.5px;color:var(--ink-2);
+  margin-top:3px;line-height:1.6}
+
+.sos-n{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:6px}
+.sos-n a{background:var(--surface-2);border-radius:15px;padding:14px 15px}
+.sos-n .n{display:block;font-family:var(--disp);font-size:25px;line-height:1;
+  color:var(--terra);font-variant-numeric:tabular-nums}
+.sos-n .w{display:block;font-size:11px;color:var(--ink-2);margin-top:6px;line-height:1.4}
+
+/* ═══════════ chiusura ═══════════ */
+.fine{margin-top:26px;padding:30px 22px 26px;background:var(--surface-2);
+  border-radius:var(--tondo);text-align:center}
+.fine h2{font-family:var(--disp);font-weight:400;font-size:23px;margin:0;letter-spacing:.012em}
+.fine p{margin:11px auto 20px;font-size:13.5px;color:var(--ink-2);line-height:1.65;max-width:32ch}
+.azione{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:15px;
+  border-radius:14px;background:var(--gold);color:#FBF8F3;font-size:14.5px;font-weight:700;
+  letter-spacing:.02em;transition:transform .16s ease}
+.azione:active{transform:scale(.985)}
+.azione svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.stelle{display:inline-flex;align-items:center;gap:8px;margin-top:17px;font-size:12.5px;
+  font-weight:600;color:var(--ink-2);border-bottom:1px solid var(--gold);padding-bottom:3px}
+.stelle i{font-style:normal;color:var(--gold-lit);letter-spacing:.2em;font-size:11px}
+
+footer{position:relative;z-index:1;max-width:var(--col);margin:0 auto;
+  padding:28px var(--gut) 112px;text-align:center;color:rgba(244,239,229,.6)}
+footer .sigla{color:rgba(244,239,229,.84);font-size:11.5px}
+footer p{margin:9px 0 0;font-size:11px;line-height:1.6}
+
+/* ═══════════ barra bassa ═══════════ */
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--glass);
+  backdrop-filter:saturate(1.4) blur(18px);-webkit-backdrop-filter:saturate(1.4) blur(18px);
+  border-top:1px solid rgba(244,239,229,.1);padding-bottom:env(safe-area-inset-bottom,0)}
+.tabs-in{max-width:var(--col);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.tab{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 4px 11px;
+  color:rgba(244,239,229,.62);font-size:9.5px;font-weight:600;letter-spacing:.04em;
+  background:none;border:0;cursor:pointer;transition:color .22s ease}
+.tab svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.6;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.tab:active{color:var(--gold-lit)}
+
+noscript .ns{position:relative;z-index:1;max-width:var(--col);margin:0 auto;
+  background:var(--surface);border-radius:22px;padding:24px;font-size:15px;line-height:1.8}
+@media (min-width:560px){ :root{--gut:30px} .hero{min-height:min(46svh,420px)} }
+</style>
+
+<div class="backdrop" aria-hidden="true">
+  <figure style="background-image:url(img/sfondo-1.jpg)"></figure>
+  <figure style="background-image:url(img/sfondo-2.jpg)"></figure>
+  <figure style="background-image:url(img/sfondo-3.jpg)"></figure>
+  <div class="veil"></div>
+</div>
+
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="sigla" href="https://www.hadrianusmultiservice.it/" target="_blank" rel="noopener">Hadrianus</a>
+    <div class="langs" id="langs" role="group" aria-label="Lingua"></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="benv" id="h-benv">Benvenuto</p>
+    <h1>Rome<br>Smart Sea</h1>
+    <p class="dove" id="h-dove"></p>
+  </section>
+  <div class="sheet">
+    <div class="maniglia" aria-hidden="true"></div>
+    <div id="app"></div>
+  </div>
+</main>
+
+<footer>
+  <a class="sigla" href="https://www.hadrianusmultiservice.it/" target="_blank" rel="noopener">Hadrianus Multiservice</a>
+  <p id="foot"></p>
+</footer>
+
+<nav class="tabs" aria-label="Azioni"><div class="tabs-in" id="tabs"></div></nav>
+
+<div class="velo" id="velo" hidden></div>
+<div class="modale" id="modale" hidden role="dialog" aria-modal="true" aria-labelledby="modale-tit">
+  <div class="modale-top"><h2 id="modale-tit"></h2>
+    <button class="chiudi" id="chiudi" type="button" aria-label="Chiudi">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="modale-corpo" id="modale-corpo"></div>
+</div>
+
+<noscript><div class="ns">
+  <b>Rome Smart Sea</b> — Via delle Rande 6, Edificio A, Scala A, 1° piano, Interno 8 — Lido di Ostia (Roma).<br>
+  Check-in dalle 15:00 · Check-out entro le 10:00.<br>
+  Wi-Fi <b>ROME SMART SEA</b> · password <b>ROMESEAESCAPE25</b>.<br>
+  WhatsApp <a href="https://wa.me/393517305472">+39 351 730 5472</a> · Emergenze 112.
+</div></noscript>
+
+<script>
+"use strict";
+
+/* ═══════════ i disegni ═══════════ */
+const I = {
+  mappa:'<path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>',
+  wifi:'<path d="M2.6 8.5a16 16 0 0 1 18.8 0"/><path d="M5.8 12.2a11 11 0 0 1 12.4 0"/><path d="M9 15.9a6 6 0 0 1 6 0"/><circle cx="12" cy="19.4" r="1.1" fill="currentColor" stroke="none"/>',
+  chat:'<path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.4-4.6A7.5 7.5 0 1 1 20 11.5Z"/>',
+  freccia:'<path d="M5 12h13"/><path d="m12.5 6 6 6-6 6"/>',
+  giu:'<path d="M12 4.5v13"/><path d="m6.5 12 5.5 5.5 5.5-5.5"/><path d="M5 20h14"/>',
+  tel:'<path d="M6.3 3.5h3l1.6 4-2 1.4a12 12 0 0 0 5.4 5.4l1.4-2 4 1.6v3a1.8 1.8 0 0 1-2 1.8A16.5 16.5 0 0 1 4.5 5.5a1.8 1.8 0 0 1 1.8-2Z"/>',
+  treno:'<rect x="5.5" y="3.5" width="13" height="13" rx="3"/><path d="M5.5 11h13"/><circle cx="9" cy="13.8" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="13.8" r="1" fill="currentColor" stroke="none"/><path d="m8 17-2 3.5M16 17l2 3.5"/>',
+  aereo:'M20.5 13.2 13 15l-2.4 4.6-1.7.4.9-4.4-3.6.9-1.3 1.7-1.3.3.8-2.8-1.4-2.5 1.3.3 1.3 1.7 3.6.9-.9-4.4 1.7.4L13 9l7.5 1.8a1.2 1.2 0 0 1 0 2.4Z',
+  auto:'<path d="M4 15.5v2.2a.8.8 0 0 0 .8.8h1.7a.8.8 0 0 0 .8-.8v-1.2h9.4v1.2a.8.8 0 0 0 .8.8h1.7a.8.8 0 0 0 .8-.8v-2.2"/><path d="M5.2 15.5h13.6a1 1 0 0 0 1-1.2l-.8-3.6a2 2 0 0 0-2-1.6H7a2 2 0 0 0-2 1.6l-.8 3.6a1 1 0 0 0 1 1.2Z"/><path d="M7.5 12.6h1M15.5 12.6h1"/>',
+  mare:'<path d="M3 17.5c1.6 0 1.6-1.6 3.2-1.6s1.6 1.6 3.2 1.6 1.6-1.6 3.2-1.6 1.6 1.6 3.2 1.6 1.6-1.6 3.2-1.6"/><path d="M3 21c1.6 0 1.6-1.6 3.2-1.6S7.8 21 9.4 21s1.6-1.6 3.2-1.6S14.2 21 15.8 21s1.6-1.6 3.2-1.6"/><circle cx="16" cy="7" r="3"/><path d="M4 12.5h9"/>',
+  croce:'<path d="M12 4.5v15M4.5 12h15"/>',
+  chiave:'<circle cx="7.5" cy="14.5" r="3.5"/><path d="m10.2 12.2 7.3-7.3 2.5 2.5-1.6 1.6 1.4 1.4-2 2-1.4-1.4-1.8 1.8"/>',
+  bussola:'<circle cx="12" cy="12" r="8.6"/><path d="m15.5 8.5-2.1 5-5 2.1 2.1-5Z"/>',
+  casa:'<path d="M3.6 10.6 12 4l8.4 6.6"/><path d="M5.9 9.9V19a1.1 1.1 0 0 0 1.1 1.1h10A1.1 1.1 0 0 0 18.1 19V9.9"/><path d="M9.9 20.1v-5.3h4.2v5.3"/>',
+  tempio:'<path d="M3.2 9.4 12 4.4l8.8 5"/><path d="M5.7 9.6V18M9.9 9.6V18M14.1 9.6V18M18.3 9.6V18"/><path d="M3.6 18h16.8M2.9 20.4h18.2"/>',
+  cesto:'<path d="M4.4 9.5h15.2l-1.5 8.9a1.6 1.6 0 0 1-1.6 1.3H7.5a1.6 1.6 0 0 1-1.6-1.3Z"/><path d="M8.8 9.5 10.6 4.2M15.2 9.5 13.4 4.2"/><path d="M9.9 12.9v3.3M14.1 12.9v3.3"/>',
+  posate:'<path d="M8.4 3.6v5.2a2 2 0 0 1-4 0V3.6"/><path d="M6.4 10.8v9.6"/><path d="M16.4 3.6c1.9 0 3.1 2.3 3.1 5 0 2.2-.9 3.6-2.2 3.9v7.9"/>',
+  valigia:'<rect x="3.5" y="7.6" width="17" height="12.2" rx="2.6"/><path d="M8.9 7.6V5.9a1.4 1.4 0 0 1 1.4-1.4h3.4a1.4 1.4 0 0 1 1.4 1.4v1.7"/><path d="M8.7 7.8v11.8M15.3 7.8v11.8"/>',
+  avviso:'<circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5M12 15.8v.2"/>'
+};
+const sv = d => '<svg viewBox="0 0 24 24" aria-hidden="true">'+(d.startsWith('<')?d:'<path d="'+d+'"/>')+'</svg>';
+
+/* ═══════════ indirizzi verificati ═══════════ */
+const U = {
+  casa:"https://maps.app.goo.gl/yXp6k24NNWVKWGGW8",
+  wa:"https://wa.me/393517305472?text=",
+  recensione:"https://search.google.com/local/writereview?placeid=ChIJyfCBfAtxlGYRsrB07Dcn878",
+  pontile:"https://maps.app.goo.gl/Z9kujG7wN7D4GVgs7",
+  scavi:"https://maps.app.goo.gl/qSU41qpPSuxxfr6m8",
+  anco:"https://maps.app.goo.gl/AfH5QywjmtWHDoro8",
+  conad:"https://maps.app.goo.gl/ntEUJBJHb2135BmP6",
+  farmacia:"https://maps.app.goo.gl/Pz2m5tUBsZc6QQz58",
+  sagona:"https://maps.app.goo.gl/mbevo9qhJBycyUST6",
+  mit:"https://maps.app.goo.gl/o2QpBATcus6n5sGn7",
+  traiano:"https://maps.app.goo.gl/of1Yqydt6BXiZp3N8",
+  taxiTel:"tel:+39065601645",
+  video:"video/guida-accesso.mp4",
+  dir:(a,m)=>"https://www.google.com/maps/dir/?api=1&origin="+
+      encodeURIComponent("Via delle Rande 6, 00122 Roma")+
+      "&destination="+encodeURIComponent(a)+"&travelmode="+m,
+  cerca:q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q)
+};
+const WIFI = { rete:"ROME SMART SEA", pw:"ROMESEAESCAPE25" };
+const D = { pontile:[1.5,25], anco:[1.4,23], conad:[.28,5], farmacia:[.11,2],
+            sagona:[.28,5], mit:[1.6,27], traiano:[1.4,24], stazione:[.54,9], mare:[.41,7] };
+/* Una sola categoria porta la fotografia: quella che si deve riconoscere a colpo
+   d'occhio, il citofono. Le altre portano un disegno, appena piu' chiaro del fondo. */
+const FOTO = { ingresso:"in-citofono-largo" };
+const DISEGNO = { arrivare:"bussola", casa:"casa", vedere:"tempio",
+                  spesa:"cesto", mangiare:"posate", partire:"valigia" };
+const PASSI_FOTO = ["in-citofono","in-cortile","in-scale","in-porta"];
+
+/* ═══════════ le parole ═══════════ */
+const T = {
+it:{nome:"IT", lingua:"Italiano", benv:"Benvenuto",
+ dove:"Via delle Rande 6 — Edificio A, Scala A<br>1° piano, Interno 8 · Lido di Ostia, Roma",
+ zona:"Lido di Ostia, Roma",
+ foot:"Gestione e assistenza dell'appartamento · Hadrianus Multiservice",
+ dist:(k,m)=>(k<1?Math.round(k*1000)+" m":String(k).replace(".",",")+" km")+(m?" · "+m+" min a piedi":""),
+ ci:"Check-in", co:"Check-out", da:"dalle", entro:"entro le",
+ rete:"Rete Wi-Fi", copia:"Copia", copiata:"Copiata",
+ vai:{mappa:"Mappa",percorso:"Percorso",chiama:"Chiama"},
+ tabs:["Ingresso","Wi-Fi","Mappa","Scrivici"],
+ cat:{ingresso:["Come si entra","Il video e i quattro passi"],
+      arrivare:["Come arrivare","Aereo, treno, auto, taxi"],
+      casa:["La casa","Wi-Fi, dotazione, regole"],
+      vedere:["Da vedere","Il mare, il pontile, gli scavi"],
+      spesa:["Spesa e servizi","Supermercato, farmacia, taxi"],
+      mangiare:["Dove mangiare","Tre indirizzi provati da noi"],
+      partire:["Prima di partire","Cinque cose e hai finito"],
+      sos:["Emergenze","112 · 118 · 115 · 1530"]},
+ ing:{vD:"Un minuto, girato sul posto: il cancello, il citofono, le scale, la porta.",
+   durata:"1 minuto · si può scaricare", scarica:"Scarica",
+   pT:"I quattro passi",
+   pD:"Il link che apre i portoni e il codice delle chiavi sono nel messaggio che ti abbiamo mandato: non stanno su questa pagina.",
+   passi:[["Il cancello su strada","Al civico 6 cerca il citofono con l'etichetta <mark>A8 ROME SMART SEA</mark> e suona. Mentre squilla, tocca il link che ti abbiamo mandato in chat: il cancello si apre."],
+          ["Il portone dell'Edificio A","Attraversa il cortile fino al portone dell'edificio. Stessa cosa: suona il citofono e tocca di nuovo lo stesso link."],
+          ["Scala A, primo piano","Prendi la scala di sinistra e sali al primo piano. La porta è di fronte alle scale, sulla destra: <mark>Interno 8</mark>."],
+          ["Le chiavi","Accanto alla porta c'è una cassetta con tastierino. Il codice è nel messaggio che ti abbiamo mandato. Dentro trovi il mazzo per i rientri."]],
+   avviso:"Se il link non funziona, nessun problema: suona il citofono e chiamaci o scrivici su WhatsApp, ti apriamo noi da remoto. Importante: mentre ti apriamo il citofono deve stare squillando."},
+ arr:{d:"Da Fiumicino sono venti minuti. Da Roma centro, trentacinque di treno.",
+   v:[["Dall'aeroporto di Fiumicino","Taxi o auto, circa 20 minuti · 20 km","aereo","Aeroporto di Fiumicino Leonardo da Vinci","driving"],
+      ["Da Roma centro, in treno","Metromare da Porta San Paolo (metro Piramide) fino a Stella Polare. Biglietto BIT 1,50 €, valido 100 minuti","treno","Stazione Stella Polare, Roma","transit"],
+      ["In auto","Si arriva da via dei Pescatori o dal lungomare","auto","Via delle Rande 6, 00122 Roma","driving"]],
+   staz:["Stazione Stella Polare","La fermata di casa, sulla linea Metromare"],
+   taxi:["Radio Taxi Ostia","Il taxi della zona · 06 5601645"]},
+ cs:{dT:"Cosa trovi",
+   dot:["Camera da letto","Soggiorno","Bagno con doccia","Angolo cottura","Piano cottura","Frigorifero","Lavastoviglie","Lavatrice","TV via cavo","Set caffè e tè","Balcone","Wi-Fi"],
+   rT:"Come ci si comporta",
+   regole:[["Il palazzo dorme dalle 22","Dalle 22:00 alle 08:00 voci e musica basse, soprattutto sul balcone: le finestre dei vicini sono a un metro."],
+     ["Lascia tutto come l'hai trovato","Cucina, soggiorno e bagno in ordine. Non devi pulire a fondo: a quello pensiamo noi."],
+     ["I rifiuti si dividono","Carta, plastica, vetro e organico hanno bidoni diversi. Non lasciare i sacchetti fuori dalla porta."],
+     ["Spegni quando esci","Luci, condizionatore, elettrodomestici. Lavatrice e lavastoviglie solo a pieno carico."],
+     ["Non si fuma, da nessuna parte","Nemmeno sul balcone: l'odore resta e il prossimo ospite lo sente."],
+     ["Dorme qui solo chi è registrato","Vuoi ospitare qualcuno? Scrivici prima: per legge dobbiamo comunicare ogni ospite."],
+     ["Chiudi a chiave","Porta e finestre, ogni volta che esci. Le chiavi non si prestano a nessuno."]]},
+ z:{mare:["La spiaggia","Si scende dritti al lungomare"],
+   pontile:["Il Pontile","Il molo sul mare, bellissimo al tramonto"],
+   anco:["Piazza Anco Marzio","Il salotto di Ostia: bar, gelato, passeggio"],
+   scavi:["Scavi di Ostia Antica","Due fermate di Metromare da Stella Polare. Ingresso 18 €, chiuso il lunedì"],
+   conad:["Supermercato Conad","Il più vicino, sotto casa"],
+   farmacia:["Farmacia Levante","A due minuti a piedi"],
+   taxi:["Radio Taxi Ostia","Tocca per chiamare · 06 5601645"],
+   sagona:["Sagona Bistrot","Cucina mediterranea, l'angolo più vicino a casa"],
+   traiano:["Antico Traiano","Storico, in un palazzo liberty del lungomare"],
+   mit:["Mit Bistrot","Sala curata, verso il centro di Ostia"]},
+ s:{d:"Numeri che funzionano da qualunque telefono, anche senza credito.",
+   n:[["112","Numero unico di emergenza"],["118","Ambulanza"],["115","Vigili del fuoco"],["1530","Emergenza in mare"]],
+   ps:["Pronto soccorso — Ospedale G. B. Grassi","Il presidio di Ostia, aperto 24 ore"],
+   farmacia:["Farmacia Levante","La più vicina a casa"]},
+ p:{d:"Cinque minuti e hai finito.",
+   l:["Lascia le chiavi nella cassetta, come le hai trovate.","Porta fuori i rifiuti e chiudi i sacchetti.","Spegni luci, condizionatore ed elettrodomestici.","Chiudi le finestre e la porta a chiave.","Controlla il balcone e il bagno: lì si dimentica sempre qualcosa."]},
+ f:{t:"Siamo qui", p:"Per qualunque cosa — una chiave, una lampadina, un consiglio su dove mangiare — scrivici. Rispondiamo tutti i giorni.",
+   cta:"Scrivici su WhatsApp", msg:"Ciao! Sono un ospite di Rome Smart Sea.", rec:"Lasciaci una recensione"}},
+
+en:{nome:"EN", lingua:"English", benv:"Welcome",
+ dove:"Via delle Rande 6 — Building A, Staircase A<br>1st floor, Flat 8 · Lido di Ostia, Rome",
+ zona:"Lido di Ostia, Rome",
+ foot:"Apartment management and guest support · Hadrianus Multiservice",
+ dist:(k,m)=>(k<1?Math.round(k*1000)+" m":k+" km")+(m?" · "+m+" min walk":""),
+ ci:"Check-in", co:"Check-out", da:"from", entro:"by",
+ rete:"Wi-Fi network", copia:"Copy", copiata:"Copied",
+ vai:{mappa:"Map",percorso:"Route",chiama:"Call"},
+ tabs:["Entry","Wi-Fi","Map","Message"],
+ cat:{ingresso:["Getting in","The video and the four steps"],
+      arrivare:["Getting here","Plane, train, car, taxi"],
+      casa:["The flat","Wi-Fi, what's inside, rules"],
+      vedere:["Worth seeing","The sea, the pier, the ruins"],
+      spesa:["Shopping & services","Supermarket, pharmacy, taxi"],
+      mangiare:["Where to eat","Three places we've tried"],
+      partire:["Before you leave","Five things and you're done"],
+      sos:["Emergencies","112 · 118 · 115 · 1530"]},
+ ing:{vD:"One minute, filmed on site: the gate, the buzzer, the stairs, the door.",
+   durata:"1 minute · downloadable", scarica:"Download",
+   pT:"The four steps",
+   pD:"The link that opens the doors and the key code are in the message we sent you — they are not on this page.",
+   passi:[["The street gate","At number 6 look for the buzzer labelled <mark>A8 ROME SMART SEA</mark> and ring it. While it rings, tap the link we sent you in chat: the gate opens."],
+          ["The door of Building A","Cross the courtyard to the building entrance. Same again: ring the buzzer and tap the same link."],
+          ["Staircase A, first floor","Take the left-hand stairs up to the first floor. The door faces the stairs, on your right: <mark>Flat 8</mark>."],
+          ["The keys","Next to the door there is a keypad box. The code is in the message we sent you. Inside you'll find the keys for coming and going."]],
+   avviso:"If the link doesn't work, no problem: ring the buzzer and call or message us on WhatsApp, we'll open remotely. Important: the buzzer has to be ringing while we open."},
+ arr:{d:"Twenty minutes from Fiumicino. Thirty-five by train from central Rome.",
+   v:[["From Fiumicino airport","Taxi or car, about 20 minutes · 20 km","aereo","Aeroporto di Fiumicino Leonardo da Vinci","driving"],
+      ["From central Rome, by train","Metromare from Porta San Paolo (Piramide metro) to Stella Polare. BIT ticket €1.50, valid 100 minutes","treno","Stazione Stella Polare, Roma","transit"],
+      ["By car","Arrive via via dei Pescatori or the seafront road","auto","Via delle Rande 6, 00122 Roma","driving"]],
+   staz:["Stella Polare station","Your stop, on the Metromare line"],
+   taxi:["Radio Taxi Ostia","The local taxi · 06 5601645"]},
+ cs:{dT:"What you'll find",
+   dot:["Bedroom","Living room","Bathroom with shower","Kitchenette","Stovetop","Fridge","Dishwasher","Washing machine","Cable TV","Coffee and tea set","Balcony","Wi-Fi"],
+   rT:"How we live here",
+   regole:[["The building sleeps from 10 pm","From 10:00 PM to 08:00 AM keep voices and music low, especially on the balcony: the neighbours' windows are a metre away."],
+     ["Leave it as you found it","Kitchen, living room and bathroom tidy. No need to deep clean — that's our job."],
+     ["Rubbish gets sorted","Paper, plastic, glass and food waste go in different bins. Don't leave bags outside the door."],
+     ["Switch off when you go out","Lights, air conditioning, appliances. Run the washing machine and dishwasher only when full."],
+     ["No smoking, anywhere","Not even on the balcony: the smell stays and the next guest notices."],
+     ["Only registered guests sleep here","Want to host someone? Tell us first: by law we have to report every guest."],
+     ["Lock up","Door and windows, every time you leave. Never lend the keys to anyone."]]},
+ z:{mare:["The beach","Straight down to the seafront"],
+   pontile:["The Pier","Ostia's pier, beautiful at sunset"],
+   anco:["Piazza Anco Marzio","Ostia's living room: cafés, gelato, evening strolls"],
+   scavi:["Ostia Antica excavations","Two Metromare stops from Stella Polare. Entry €18, closed on Mondays"],
+   conad:["Conad supermarket","The closest one, just downstairs"],
+   farmacia:["Farmacia Levante","Two minutes on foot"],
+   taxi:["Radio Taxi Ostia","Tap to call · 06 5601645"],
+   sagona:["Sagona Bistrot","Mediterranean kitchen, the closest corner to the flat"],
+   traiano:["Antico Traiano","A classic, in an Art Nouveau building on the seafront"],
+   mit:["Mit Bistrot","Elegant room, towards the centre of Ostia"]},
+ s:{d:"Numbers that work from any phone, even with no credit.",
+   n:[["112","Single emergency number"],["118","Ambulance"],["115","Fire brigade"],["1530","Sea rescue"]],
+   ps:["Emergency room — G. B. Grassi Hospital","Ostia's hospital, open 24 hours"],
+   farmacia:["Farmacia Levante","The nearest pharmacy"]},
+ p:{d:"Five minutes and you're done.",
+   l:["Leave the keys in the box, as you found them.","Take the rubbish out and close the bags.","Switch off lights, air conditioning and appliances.","Close the windows and lock the door.","Check the balcony and the bathroom — something is always left behind."]},
+ f:{t:"We are here", p:"For anything at all — a key, a light bulb, a dinner recommendation — just write. We answer every day.",
+   cta:"Message us on WhatsApp", msg:"Hello! I am a guest at Rome Smart Sea.", rec:"Leave us a review"}},
+
+es:{nome:"ES", lingua:"Español", benv:"Bienvenido",
+ dove:"Via delle Rande 6 — Edificio A, Escalera A<br>1.ª planta, Interior 8 · Lido di Ostia, Roma",
+ zona:"Lido di Ostia, Roma",
+ foot:"Gestión y asistencia del apartamento · Hadrianus Multiservice",
+ dist:(k,m)=>(k<1?Math.round(k*1000)+" m":String(k).replace(".",",")+" km")+(m?" · "+m+" min a pie":""),
+ ci:"Check-in", co:"Check-out", da:"desde las", entro:"hasta las",
+ rete:"Red Wi-Fi", copia:"Copiar", copiata:"Copiada",
+ vai:{mappa:"Mapa",percorso:"Ruta",chiama:"Llamar"},
+ tabs:["Entrada","Wi-Fi","Mapa","Escríbenos"],
+ cat:{ingresso:["Cómo se entra","El vídeo y los cuatro pasos"],
+      arrivare:["Cómo llegar","Avión, tren, coche, taxi"],
+      casa:["La casa","Wi-Fi, equipamiento, normas"],
+      vedere:["Para ver","El mar, el muelle, las ruinas"],
+      spesa:["Compras y servicios","Supermercado, farmacia, taxi"],
+      mangiare:["Dónde comer","Tres sitios probados"],
+      partire:["Antes de irte","Cinco cosas y listo"],
+      sos:["Emergencias","112 · 118 · 115 · 1530"]},
+ ing:{vD:"Un minuto, grabado allí mismo: la verja, el portero, las escaleras, la puerta.",
+   durata:"1 minuto · se puede descargar", scarica:"Descargar",
+   pT:"Los cuatro pasos",
+   pD:"El enlace que abre los portales y el código de las llaves están en el mensaje que te enviamos: no están en esta página.",
+   passi:[["La verja de la calle","En el número 6 busca el portero con la etiqueta <mark>A8 ROME SMART SEA</mark> y llama. Mientras suena, toca el enlace que te enviamos por chat: la verja se abre."],
+          ["El portal del Edificio A","Cruza el patio hasta el portal del edificio. Lo mismo: llama al portero y toca otra vez el mismo enlace."],
+          ["Escalera A, primera planta","Toma la escalera de la izquierda y sube a la primera planta. La puerta está frente a las escaleras, a la derecha: <mark>Interior 8</mark>."],
+          ["Las llaves","Junto a la puerta hay una caja con teclado. El código está en el mensaje que te enviamos. Dentro encontrarás las llaves."]],
+   avviso:"Si el enlace no funciona, no pasa nada: llama al portero y telefonéanos o escríbenos por WhatsApp, te abrimos nosotros. Importante: el portero tiene que estar sonando mientras abrimos."},
+ arr:{d:"Desde Fiumicino son veinte minutos. Desde el centro de Roma, treinta y cinco en tren.",
+   v:[["Desde el aeropuerto de Fiumicino","Taxi o coche, unos 20 minutos · 20 km","aereo","Aeroporto di Fiumicino Leonardo da Vinci","driving"],
+      ["Desde el centro de Roma, en tren","Metromare desde Porta San Paolo (metro Piramide) hasta Stella Polare. Billete BIT 1,50 €, válido 100 minutos","treno","Stazione Stella Polare, Roma","transit"],
+      ["En coche","Se llega por via dei Pescatori o por el paseo marítimo","auto","Via delle Rande 6, 00122 Roma","driving"]],
+   staz:["Estación Stella Polare","Tu parada, en la línea Metromare"],
+   taxi:["Radio Taxi Ostia","El taxi de la zona · 06 5601645"]},
+ cs:{dT:"Qué encontrarás",
+   dot:["Dormitorio","Salón","Baño con ducha","Cocina americana","Placa de cocina","Nevera","Lavavajillas","Lavadora","TV por cable","Set de café y té","Balcón","Wi-Fi"],
+   rT:"Cómo nos comportamos",
+   regole:[["El edificio duerme a partir de las 22","De 22:00 a 08:00 voces y música bajas, sobre todo en el balcón: las ventanas de los vecinos están a un metro."],
+     ["Déjalo como lo encontraste","Cocina, salón y baño recogidos. No hace falta limpiar a fondo: de eso nos ocupamos nosotros."],
+     ["La basura se separa","Papel, plástico, vidrio y orgánico van en cubos distintos. No dejes bolsas fuera de la puerta."],
+     ["Apaga al salir","Luces, aire acondicionado, electrodomésticos. Lavadora y lavavajillas solo llenos."],
+     ["No se fuma en ninguna parte","Ni en el balcón: el olor se queda y el siguiente huésped lo nota."],
+     ["Aquí duerme solo quien está registrado","¿Quieres alojar a alguien? Dínoslo antes: por ley debemos comunicar cada huésped."],
+     ["Cierra con llave","Puerta y ventanas, cada vez que salgas. Las llaves no se prestan."]]},
+ z:{mare:["La playa","Se baja directo al paseo marítimo"],
+   pontile:["El Pontile","El muelle sobre el mar, precioso al atardecer"],
+   anco:["Piazza Anco Marzio","El salón de Ostia: bares, helado, paseo"],
+   scavi:["Excavaciones de Ostia Antica","Dos paradas de Metromare desde Stella Polare. Entrada 18 €, cerrado los lunes"],
+   conad:["Supermercado Conad","El más cercano, debajo de casa"],
+   farmacia:["Farmacia Levante","A dos minutos a pie"],
+   taxi:["Radio Taxi Ostia","Toca para llamar · 06 5601645"],
+   sagona:["Sagona Bistrot","Cocina mediterránea, la esquina más cercana"],
+   traiano:["Antico Traiano","Un clásico, en un edificio liberty del paseo marítimo"],
+   mit:["Mit Bistrot","Sala cuidada, hacia el centro de Ostia"]},
+ s:{d:"Números que funcionan desde cualquier teléfono, incluso sin saldo.",
+   n:[["112","Número único de emergencia"],["118","Ambulancia"],["115","Bomberos"],["1530","Emergencia en el mar"]],
+   ps:["Urgencias — Hospital G. B. Grassi","El hospital de Ostia, abierto 24 horas"],
+   farmacia:["Farmacia Levante","La más cercana"]},
+ p:{d:"Cinco minutos y listo.",
+   l:["Deja las llaves en la caja, como las encontraste.","Saca la basura y cierra las bolsas.","Apaga luces, aire acondicionado y electrodomésticos.","Cierra las ventanas y la puerta con llave.","Revisa el balcón y el baño: siempre se olvida algo."]},
+ f:{t:"Estamos aquí", p:"Para cualquier cosa — una llave, una bombilla, un consejo para cenar — escríbenos. Respondemos todos los días.",
+   cta:"Escríbenos por WhatsApp", msg:"¡Hola! Soy un huésped de Rome Smart Sea.", rec:"Déjanos una reseña"}},
+
+fr:{nome:"FR", lingua:"Français", benv:"Bienvenue",
+ dove:"Via delle Rande 6 — Bâtiment A, Escalier A<br>1er étage, Appartement 8 · Lido di Ostia, Rome",
+ zona:"Lido di Ostia, Rome",
+ foot:"Gestion et assistance de l'appartement · Hadrianus Multiservice",
+ dist:(k,m)=>(k<1?Math.round(k*1000)+" m":String(k).replace(".",",")+" km")+(m?" · "+m+" min à pied":""),
+ ci:"Arrivée", co:"Départ", da:"à partir de", entro:"avant",
+ rete:"Réseau Wi-Fi", copia:"Copier", copiata:"Copié",
+ vai:{mappa:"Carte",percorso:"Itinéraire",chiama:"Appeler"},
+ tabs:["Entrée","Wi-Fi","Carte","Écrire"],
+ cat:{ingresso:["Comment entrer","La vidéo et les quatre étapes"],
+      arrivare:["Pour venir","Avion, train, voiture, taxi"],
+      casa:["Le logement","Wi-Fi, équipement, règles"],
+      vedere:["À voir","La mer, la jetée, les fouilles"],
+      spesa:["Courses et services","Supermarché, pharmacie, taxi"],
+      mangiare:["Où manger","Trois adresses testées"],
+      partire:["Avant de partir","Cinq choses et c'est fait"],
+      sos:["Urgences","112 · 118 · 115 · 1530"]},
+ ing:{vD:"Une minute, tournée sur place : le portail, l'interphone, l'escalier, la porte.",
+   durata:"1 minute · téléchargeable", scarica:"Télécharger",
+   pT:"Les quatre étapes",
+   pD:"Le lien qui ouvre les portails et le code des clés sont dans le message que nous vous avons envoyé : ils ne sont pas sur cette page.",
+   passi:[["Le portail sur rue","Au numéro 6, cherchez l'interphone portant l'étiquette <mark>A8 ROME SMART SEA</mark> et sonnez. Pendant qu'il sonne, touchez le lien envoyé dans la conversation : le portail s'ouvre."],
+          ["La porte du Bâtiment A","Traversez la cour jusqu'à l'entrée du bâtiment. Même chose : sonnez et touchez à nouveau le même lien."],
+          ["Escalier A, premier étage","Prenez l'escalier de gauche jusqu'au premier étage. La porte fait face à l'escalier, à droite : <mark>Appartement 8</mark>."],
+          ["Les clés","À côté de la porte, une boîte à code. Le code est dans le message que nous vous avons envoyé. À l'intérieur, le trousseau pour vos allées et venues."]],
+   avviso:"Si le lien ne marche pas, aucun souci : sonnez à l'interphone et appelez-nous ou écrivez sur WhatsApp, nous ouvrirons à distance. Important : l'interphone doit sonner pendant que nous ouvrons."},
+ arr:{d:"Vingt minutes depuis Fiumicino. Trente-cinq en train depuis le centre de Rome.",
+   v:[["Depuis l'aéroport de Fiumicino","Taxi ou voiture, environ 20 minutes · 20 km","aereo","Aeroporto di Fiumicino Leonardo da Vinci","driving"],
+      ["Depuis le centre de Rome, en train","Metromare depuis Porta San Paolo (métro Piramide) jusqu'à Stella Polare. Billet BIT 1,50 €, valable 100 minutes","treno","Stazione Stella Polare, Roma","transit"],
+      ["En voiture","On arrive par la via dei Pescatori ou par le front de mer","auto","Via delle Rande 6, 00122 Roma","driving"]],
+   staz:["Gare Stella Polare","Votre arrêt, sur la ligne Metromare"],
+   taxi:["Radio Taxi Ostia","Le taxi du quartier · 06 5601645"]},
+ cs:{dT:"Ce que vous trouverez",
+   dot:["Chambre","Salon","Salle de bain avec douche","Coin cuisine","Plaque de cuisson","Réfrigérateur","Lave-vaisselle","Lave-linge","TV câblée","Nécessaire café et thé","Balcon","Wi-Fi"],
+   rT:"Comment on y vit",
+   regole:[["L'immeuble dort à partir de 22h","De 22h00 à 08h00, voix et musique basses, surtout sur le balcon : les fenêtres des voisins sont à un mètre."],
+     ["Laissez comme vous avez trouvé","Cuisine, salon et salle de bain rangés. Pas besoin de nettoyer à fond : c'est notre travail."],
+     ["Les déchets se trient","Papier, plastique, verre et organique vont dans des bacs différents. Ne laissez pas de sacs devant la porte."],
+     ["Éteignez en sortant","Lumières, climatisation, appareils. Lave-linge et lave-vaisselle seulement pleins."],
+     ["On ne fume nulle part","Pas même sur le balcon : l'odeur reste et le client suivant la sent."],
+     ["Seules les personnes enregistrées dorment ici","Vous voulez inviter quelqu'un ? Dites-le avant : la loi nous oblige à déclarer chaque client."],
+     ["Fermez à clé","Porte et fenêtres, à chaque sortie. Les clés ne se prêtent pas."]]},
+ z:{mare:["La plage","On descend tout droit vers le front de mer"],
+   pontile:["Le Pontile","La jetée sur la mer, superbe au coucher du soleil"],
+   anco:["Piazza Anco Marzio","Le salon d'Ostie : cafés, glaces, promenade"],
+   scavi:["Fouilles d'Ostia Antica","Deux arrêts de Metromare depuis Stella Polare. Entrée 18 €, fermé le lundi"],
+   conad:["Supermarché Conad","Le plus proche, en bas de l'immeuble"],
+   farmacia:["Farmacia Levante","À deux minutes à pied"],
+   taxi:["Radio Taxi Ostia","Touchez pour appeler · 06 5601645"],
+   sagona:["Sagona Bistrot","Cuisine méditerranéenne, le coin le plus proche"],
+   traiano:["Antico Traiano","Un classique, dans un immeuble Art nouveau du front de mer"],
+   mit:["Mit Bistrot","Belle salle, vers le centre d'Ostie"]},
+ s:{d:"Des numéros qui marchent depuis n'importe quel téléphone, même sans crédit.",
+   n:[["112","Numéro d'urgence unique"],["118","Ambulance"],["115","Pompiers"],["1530","Secours en mer"]],
+   ps:["Urgences — Hôpital G. B. Grassi","L'hôpital d'Ostie, ouvert 24h/24"],
+   farmacia:["Farmacia Levante","La pharmacie la plus proche"]},
+ p:{d:"Cinq minutes et c'est fait.",
+   l:["Laissez les clés dans la boîte, comme vous les avez trouvées.","Sortez les poubelles et fermez les sacs.","Éteignez lumières, climatisation et appareils.","Fermez les fenêtres et verrouillez la porte.","Vérifiez le balcon et la salle de bain : on y oublie toujours quelque chose."]},
+ f:{t:"Nous sommes là", p:"Pour tout — une clé, une ampoule, un conseil pour dîner — écrivez-nous. Nous répondons tous les jours.",
+   cta:"Écrivez-nous sur WhatsApp", msg:"Bonjour ! Je suis un client de Rome Smart Sea.", rec:"Laissez-nous un avis"}},
+
+de:{nome:"DE", lingua:"Deutsch", benv:"Willkommen",
+ dove:"Via delle Rande 6 — Gebäude A, Treppe A<br>1. Stock, Wohnung 8 · Lido di Ostia, Rom",
+ zona:"Lido di Ostia, Rom",
+ foot:"Verwaltung und Betreuung der Wohnung · Hadrianus Multiservice",
+ dist:(k,m)=>(k<1?Math.round(k*1000)+" m":String(k).replace(".",",")+" km")+(m?" · "+m+" Min. zu Fuß":""),
+ ci:"Check-in", co:"Check-out", da:"ab", entro:"bis",
+ rete:"WLAN-Netzwerk", copia:"Kopieren", copiata:"Kopiert",
+ vai:{mappa:"Karte",percorso:"Route",chiama:"Anrufen"},
+ tabs:["Eingang","WLAN","Karte","Schreiben"],
+ cat:{ingresso:["So kommen Sie rein","Das Video und die vier Schritte"],
+      arrivare:["Anreise","Flugzeug, Bahn, Auto, Taxi"],
+      casa:["Die Wohnung","WLAN, Ausstattung, Regeln"],
+      vedere:["Sehenswert","Das Meer, die Seebrücke, die Ausgrabungen"],
+      spesa:["Einkaufen & Service","Supermarkt, Apotheke, Taxi"],
+      mangiare:["Essen gehen","Drei erprobte Adressen"],
+      partire:["Vor der Abreise","Fünf Dinge, dann fertig"],
+      sos:["Notfälle","112 · 118 · 115 · 1530"]},
+ ing:{vD:"Eine Minute, vor Ort gedreht: das Tor, die Klingel, die Treppe, die Tür.",
+   durata:"1 Minute · herunterladbar", scarica:"Herunterladen",
+   pT:"Die vier Schritte",
+   pD:"Der Link, der die Tore öffnet, und der Schlüsselcode stehen in der Nachricht, die wir Ihnen geschickt haben — nicht auf dieser Seite.",
+   passi:[["Das Tor zur Straße","Suchen Sie an Nummer 6 die Klingel mit der Aufschrift <mark>A8 ROME SMART SEA</mark> und klingeln Sie. Während es klingelt, tippen Sie auf den Link aus unserer Nachricht: das Tor öffnet sich."],
+          ["Die Tür von Gebäude A","Gehen Sie über den Hof zum Hauseingang. Dasselbe noch einmal: klingeln und denselben Link antippen."],
+          ["Treppe A, erster Stock","Nehmen Sie die linke Treppe in den ersten Stock. Die Tür liegt gegenüber der Treppe, rechts: <mark>Wohnung 8</mark>."],
+          ["Die Schlüssel","Neben der Tür hängt ein Schlüsselkasten mit Tastenfeld. Der Code steht in unserer Nachricht. Darin finden Sie den Schlüsselbund."]],
+   avviso:"Wenn der Link nicht funktioniert, kein Problem: klingeln Sie und rufen Sie uns an oder schreiben Sie auf WhatsApp, wir öffnen aus der Ferne. Wichtig: die Klingel muss dabei läuten."},
+ arr:{d:"Zwanzig Minuten von Fiumicino. Fünfunddreißig mit der Bahn aus dem Zentrum Roms.",
+   v:[["Vom Flughafen Fiumicino","Taxi oder Auto, etwa 20 Minuten · 20 km","aereo","Aeroporto di Fiumicino Leonardo da Vinci","driving"],
+      ["Aus dem Zentrum Roms, mit der Bahn","Metromare von Porta San Paolo (Metro Piramide) bis Stella Polare. BIT-Ticket 1,50 €, 100 Minuten gültig","treno","Stazione Stella Polare, Roma","transit"],
+      ["Mit dem Auto","Anfahrt über die Via dei Pescatori oder die Strandpromenade","auto","Via delle Rande 6, 00122 Roma","driving"]],
+   staz:["Bahnhof Stella Polare","Ihre Haltestelle an der Metromare-Linie"],
+   taxi:["Radio Taxi Ostia","Das Taxi vor Ort · 06 5601645"]},
+ cs:{dT:"Was Sie vorfinden",
+   dot:["Schlafzimmer","Wohnzimmer","Bad mit Dusche","Küchenzeile","Kochfeld","Kühlschrank","Geschirrspüler","Waschmaschine","Kabel-TV","Kaffee- und Teeset","Balkon","WLAN"],
+   rT:"Wie man hier lebt",
+   regole:[["Ab 22 Uhr schläft das Haus","Von 22:00 bis 08:00 Uhr Stimmen und Musik leise, vor allem auf dem Balkon: die Fenster der Nachbarn sind einen Meter entfernt."],
+     ["Lassen Sie es, wie Sie es vorgefunden haben","Küche, Wohnzimmer und Bad aufgeräumt. Gründlich putzen müssen Sie nicht — das ist unsere Aufgabe."],
+     ["Müll wird getrennt","Papier, Plastik, Glas und Bioabfall kommen in verschiedene Tonnen. Keine Säcke vor der Tür abstellen."],
+     ["Beim Hinausgehen ausschalten","Licht, Klimaanlage, Geräte. Wasch- und Spülmaschine nur voll laufen lassen."],
+     ["Rauchen ist überall verboten","Auch auf dem Balkon nicht: der Geruch bleibt, und der nächste Gast merkt es."],
+     ["Hier schläft nur, wer gemeldet ist","Sie möchten jemanden aufnehmen? Sagen Sie es vorher: wir müssen jeden Gast melden."],
+     ["Abschließen","Tür und Fenster, jedes Mal beim Hinausgehen. Die Schlüssel werden nicht weitergegeben."]]},
+ z:{mare:["Der Strand","Geradeaus hinunter zur Promenade"],
+   pontile:["Der Pontile","Die Seebrücke, am schönsten bei Sonnenuntergang"],
+   anco:["Piazza Anco Marzio","Ostias gute Stube: Bars, Eis, Flanieren"],
+   scavi:["Ausgrabungen von Ostia Antica","Zwei Metromare-Stationen ab Stella Polare. Eintritt 18 €, montags geschlossen"],
+   conad:["Supermarkt Conad","Der nächste, gleich unten"],
+   farmacia:["Farmacia Levante","Zwei Minuten zu Fuß"],
+   taxi:["Radio Taxi Ostia","Tippen zum Anrufen · 06 5601645"],
+   sagona:["Sagona Bistrot","Mediterrane Küche, die nächste Ecke"],
+   traiano:["Antico Traiano","Ein Klassiker, in einem Jugendstilhaus an der Promenade"],
+   mit:["Mit Bistrot","Schöner Raum, Richtung Zentrum von Ostia"]},
+ s:{d:"Nummern, die von jedem Telefon funktionieren, auch ohne Guthaben.",
+   n:[["112","Einheitliche Notrufnummer"],["118","Rettungsdienst"],["115","Feuerwehr"],["1530","Seenotrettung"]],
+   ps:["Notaufnahme — Krankenhaus G. B. Grassi","Das Krankenhaus von Ostia, 24 Stunden geöffnet"],
+   farmacia:["Farmacia Levante","Die nächste Apotheke"]},
+ p:{d:"Fünf Minuten, dann sind Sie fertig.",
+   l:["Die Schlüssel in den Kasten legen, so wie Sie sie vorgefunden haben.","Den Müll hinausbringen und die Säcke schließen.","Licht, Klimaanlage und Geräte ausschalten.","Fenster schließen und die Tür abschließen.","Balkon und Bad prüfen — dort bleibt immer etwas liegen."]},
+ f:{t:"Wir sind da", p:"Für alles — einen Schlüssel, eine Glühbirne, einen Tipp zum Abendessen — schreiben Sie uns. Wir antworten jeden Tag.",
+   cta:"Schreiben Sie uns auf WhatsApp", msg:"Hallo! Ich bin Gast in Rome Smart Sea.", rec:"Bewertung hinterlassen"}}
+};
+
+/* ═══════════ costruzione ═══════════ */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let L = "it";
+let salvataggio = null;
+
+function riga(href, fig, nome, nota, vai){
+  const sinistra = fig.startsWith("ico:")
+    ? '<span class="ico">'+sv(I[fig.slice(4)])+'</span>'
+    : '<img class="fig" src="img/'+fig+'.jpg" alt="" loading="lazy" width="50" height="50">';
+  const fuori = href.startsWith("tel:") ? "" : ' target="_blank" rel="noopener"';
+  return '<a class="riga" href="'+href+'"'+fuori+'>'+sinistra+
+    '<span class="corpo"><span class="nome">'+esc(nome)+'</span>'+
+    (nota ? '<span class="nota">'+esc(nota)+'</span>' : '')+'</span>'+
+    '<span class="vai">'+esc(vai)+sv(I.freccia)+'</span></a>';
+}
+
+/* ─── cosa c'è dentro ogni categoria ─── */
+function dentro(chiave){
+  const t = T[L], km = k => t.dist(D[k][0], D[k][1]), z = t.z;
+
+  if (chiave === "ingresso") return '<p class="dida">'+esc(t.ing.vD)+'</p>'+
+    '<div class="cinema"><video controls playsinline preload="metadata" '+
+      'poster="img/video-poster.jpg" src="'+U.video+'"></video></div>'+
+    '<div class="sotto-video"><span class="durata">'+esc(t.ing.durata)+'</span>'+
+      '<button class="scarica" type="button" id="scarica">'+sv(I.giu)+esc(t.ing.scarica)+'</button></div>'+
+    '<p class="occhiello">'+esc(t.ing.pT)+'</p>'+
+    '<p class="dida">'+esc(t.ing.pD)+'</p>'+
+    '<ol class="passi">'+t.ing.passi.map((p,i)=>
+      '<li><span class="foto"><img src="img/'+PASSI_FOTO[i]+'.jpg" alt="" loading="lazy">'+
+      '<i>'+(i+1)+'</i></span><span><b>'+esc(p[0])+'</b><span>'+p[1]+'</span></span></li>').join("")+'</ol>'+
+    '<div class="avviso">'+sv(I.avviso)+'<span>'+esc(t.ing.avviso)+'</span></div>';
+
+  if (chiave === "arrivare") return '<p class="dida">'+esc(t.arr.d)+'</p>'+
+    '<a class="carta" href="'+U.casa+'" target="_blank" rel="noopener">'+
+      '<img src="img/mappa-larga.jpg" alt="" loading="lazy" width="650" height="406">'+
+      '<span class="ombra"></span><span class="scritta">'+
+      '<span class="via">Via delle Rande 6<span class="zona">'+esc(t.zona)+'</span></span>'+
+      '<span class="vai">'+esc(t.vai.mappa)+sv(I.freccia)+'</span></span></a>'+
+    '<div>'+t.arr.v.map(v=>riga(U.dir(v[3],v[4]),"ico:"+v[2],v[0],v[1],t.vai.percorso)).join("")+
+      riga(U.cerca("Stazione Stella Polare Ostia"),"ico:treno",t.arr.staz[0],t.arr.staz[1]+" · "+km("stazione"),t.vai.mappa)+
+      riga(U.taxiTel,"taxi",t.arr.taxi[0],t.arr.taxi[1],t.vai.chiama)+'</div>';
+
+  if (chiave === "casa") return '<div class="wifi"><dl>'+
+      '<dt>'+esc(t.rete)+'</dt><dd>'+esc(WIFI.rete)+'</dd>'+
+      '<dt>Password</dt><dd id="pw">'+esc(WIFI.pw)+'</dd></dl>'+
+      '<button class="copia" id="copia" type="button" data-a="'+esc(t.copia)+'" data-b="'+esc(t.copiata)+'">'+esc(t.copia)+'</button></div>'+
+    '<p class="occhiello">'+esc(t.cs.dT)+'</p>'+
+    '<div class="dot">'+t.cs.dot.map(d=>'<span>'+esc(d)+'</span>').join("")+'</div>'+
+    '<p class="occhiello">'+esc(t.cs.rT)+'</p>'+
+    '<ol class="regole">'+t.cs.regole.map(r=>'<li><b>'+esc(r[0])+'</b><span>'+esc(r[1])+'</span></li>').join("")+'</ol>';
+
+  if (chiave === "vedere") return '<div>'+
+    riga(U.dir("Lungomare Duca degli Abruzzi, Lido di Ostia","walking"),"ico:mare",z.mare[0],z.mare[1]+" · "+km("mare"),t.vai.percorso)+
+    riga(U.pontile,"pontile",z.pontile[0],z.pontile[1]+" · "+km("pontile"),t.vai.mappa)+
+    riga(U.anco,"anco-marzio",z.anco[0],z.anco[1]+" · "+km("anco"),t.vai.mappa)+
+    riga(U.scavi,"ostia-antica",z.scavi[0],z.scavi[1],t.vai.mappa)+'</div>';
+
+  if (chiave === "spesa") return '<div>'+
+    riga(U.conad,"conad",z.conad[0],z.conad[1]+" · "+km("conad"),t.vai.mappa)+
+    riga(U.farmacia,"farmacia",z.farmacia[0],z.farmacia[1]+" · "+km("farmacia"),t.vai.mappa)+
+    riga(U.taxiTel,"taxi",z.taxi[0],z.taxi[1],t.vai.chiama)+'</div>';
+
+  if (chiave === "mangiare") return '<div>'+
+    riga(U.sagona,"sagona",z.sagona[0],z.sagona[1]+" · "+km("sagona"),t.vai.mappa)+
+    riga(U.traiano,"antico-traiano",z.traiano[0],z.traiano[1]+" · "+km("traiano"),t.vai.mappa)+
+    riga(U.mit,"mit-bistrot",z.mit[0],z.mit[1]+" · "+km("mit"),t.vai.mappa)+'</div>';
+
+  if (chiave === "partire") return '<p class="dida">'+esc(t.p.d)+'</p><ol class="regole">'+
+    t.p.l.map(x=>'<li><b>'+esc(x)+'</b></li>').join("")+'</ol>';
+
+  if (chiave === "sos") return '<p class="dida">'+esc(t.s.d)+'</p>'+
+    '<div class="sos-n">'+t.s.n.map(n=>'<a href="tel:'+n[0]+'"><span class="n">'+n[0]+'</span><span class="w">'+esc(n[1])+'</span></a>').join("")+'</div>'+
+    '<div style="margin-top:12px">'+
+      riga(U.cerca("Ospedale Giovanni Battista Grassi Ostia"),"ico:croce",t.s.ps[0],t.s.ps[1],t.vai.mappa)+
+      riga(U.farmacia,"farmacia",t.s.farmacia[0],t.s.farmacia[1]+" · "+km("farmacia"),t.vai.mappa)+'</div>';
+  return "";
+}
+
+function tessera(chiave, larga){
+  const c = T[L].cat[chiave];
+  return '<button class="cat'+(larga?" larga":"")+'" type="button" data-apre="'+chiave+'">'+
+    '<img src="img/'+FOTO[chiave]+'.jpg" alt="" loading="lazy">'+
+    '<span class="vel"></span><span class="segno">'+sv(I.freccia)+'</span>'+
+    '<span class="lab"><span class="nome">'+esc(c[0])+'</span>'+
+    '<span class="sotto">'+esc(c[1])+'</span></span></button>';
+}
+
+function tesseraDisegno(chiave){
+  const c = T[L].cat[chiave];
+  return '<button class="cat disegnata" type="button" data-apre="'+chiave+'">'+
+    '<span class="segno">'+sv(I.freccia)+'</span>'+
+    '<span class="disegno">'+sv(I[DISEGNO[chiave]])+'</span>'+
+    '<span class="lab"><span class="nome">'+esc(c[0])+'</span>'+
+    '<span class="sotto">'+esc(c[1])+'</span></span></button>';
+}
+
+function costruisci(lang){
+  L = lang;
+  const t = T[lang];
+
+  document.getElementById("app").innerHTML =
+    '<div class="essenziale">'+
+      '<div><p class="k">'+esc(t.ci)+' · '+esc(t.da)+'</p><p class="v">15:00</p></div>'+
+      '<div><p class="k">'+esc(t.co)+' · '+esc(t.entro)+'</p><p class="v">10:00</p></div>'+
+      '<button class="rete" type="button" id="rete">'+
+        '<span class="bollo">'+sv(I.wifi)+'</span>'+
+        '<span class="testo"><p class="k">'+esc(t.rete)+' · '+esc(WIFI.rete)+'</p>'+
+        '<span class="pw" id="pw-breve">'+esc(WIFI.pw)+'</span></span>'+
+        '<span class="fai" id="rete-fai">'+esc(t.copia)+'</span></button>'+
+    '</div>'+
+    '<div class="categorie">'+
+      tessera("ingresso", true)+
+      tesseraDisegno("arrivare")+tesseraDisegno("casa")+
+      tesseraDisegno("vedere")+tesseraDisegno("spesa")+
+      tesseraDisegno("mangiare")+tesseraDisegno("partire")+
+      '<button class="cat sos" type="button" data-apre="sos">'+
+        '<span class="bollo">'+sv(I.croce)+'</span>'+
+        '<span class="lab"><span class="nome">'+esc(t.cat.sos[0])+'</span>'+
+        '<span class="sotto">'+esc(t.cat.sos[1])+'</span></span>'+
+        '<span class="segno">'+sv(I.freccia)+'</span></button>'+
+    '</div>'+
+    '<div class="fine"><h2>'+esc(t.f.t)+'</h2><p>'+esc(t.f.p)+'</p>'+
+      '<a class="azione" href="'+U.wa+encodeURIComponent(t.f.msg)+'" target="_blank" rel="noopener">'+
+        sv(I.chat)+esc(t.f.cta)+'</a>'+
+      '<a class="stelle" href="'+U.recensione+'" target="_blank" rel="noopener">'+
+        '<i>★★★★★</i>'+esc(t.f.rec)+'</a></div>';
+
+  /* barra bassa: quattro azioni, non quattro sezioni */
+  document.getElementById("tabs").innerHTML =
+    '<button class="tab" type="button" data-apre="ingresso">'+sv(I.chiave)+'<span>'+esc(t.tabs[0])+'</span></button>'+
+    '<button class="tab" type="button" data-apre="casa">'+sv(I.wifi)+'<span>'+esc(t.tabs[1])+'</span></button>'+
+    '<a class="tab" href="'+U.casa+'" target="_blank" rel="noopener">'+sv(I.mappa)+'<span>'+esc(t.tabs[2])+'</span></a>'+
+    '<a class="tab" href="'+U.wa+encodeURIComponent(t.f.msg)+'" target="_blank" rel="noopener">'+sv(I.chat)+'<span>'+esc(t.tabs[3])+'</span></a>';
+
+  document.getElementById("h-benv").textContent = t.benv;
+  document.getElementById("h-dove").innerHTML = t.dove;
+  document.getElementById("foot").textContent = t.foot;
+  document.documentElement.lang = lang;
+  document.querySelectorAll("#langs button").forEach(b =>
+    b.setAttribute("aria-current", b.dataset.l === lang ? "true" : "false"));
+
+  document.getElementById("rete").addEventListener("click", () => {
+    copiaPassword(document.getElementById("rete-fai"), t.copiata, t.copia);
+  });
+}
+
+async function copiaPassword(dove, fatto, prima){
+  try { await navigator.clipboard.writeText(WIFI.pw); }
+  catch (e) {
+    const ta = document.createElement("textarea");
+    ta.value = WIFI.pw; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch (_) {}
+    ta.remove();
+  }
+  if (!dove) return;
+  const era = dove.tagName === "BUTTON" ? dove.textContent : dove.textContent;
+  dove.textContent = fatto; dove.dataset.fatto = "1";
+  setTimeout(() => { dove.textContent = prima; dove.dataset.fatto = ""; }, 2200);
+}
+
+/* ═══════════ la finestra ═══════════ */
+const velo = document.getElementById("velo");
+const modale = document.getElementById("modale");
+const corpo = document.getElementById("modale-corpo");
+const titolo = document.getElementById("modale-tit");
+let tornaA = null;
+
+function apri(chiave){
+  const voce = T[L].cat[chiave];
+  if (!voce) return;
+  tornaA = document.activeElement;
+  titolo.textContent = voce[0];
+  corpo.innerHTML = dentro(chiave);
+  corpo.scrollTop = 0;
+  velo.hidden = false; modale.hidden = false;
+  document.body.classList.add("fermo");
+  requestAnimationFrame(() => { velo.classList.add("su"); modale.classList.add("su"); });
+  document.getElementById("chiudi").focus();
+
+  const b = corpo.querySelector("#copia");
+  if (b) b.addEventListener("click", () => copiaPassword(b, b.dataset.b, b.dataset.a));
+
+  const giu = corpo.querySelector("#scarica");
+  if (giu) giu.addEventListener("click", async () => {
+    giu.disabled = true; const era = giu.innerHTML; giu.innerHTML = sv(I.giu)+"…";
+    try {
+      if (salvataggio) {
+        const blob = await (await fetch(U.video)).blob();
+        await salvataggio.save({ filename:"rome-smart-sea-guida-accesso.mp4", data: blob });
+      } else { window.open(U.video, "_blank", "noopener"); }
+    } catch (e) { /* ha detto di no, o non si può: si torna com'era */ }
+    giu.innerHTML = era; giu.disabled = false;
+  });
+}
+function chiudi(){
+  const v = corpo.querySelector("video"); if (v) v.pause();
+  velo.classList.remove("su"); modale.classList.remove("su");
+  document.body.classList.remove("fermo");
+  setTimeout(() => { velo.hidden = true; modale.hidden = true; corpo.innerHTML = ""; }, 340);
+  if (tornaA && tornaA.focus) tornaA.focus();
+}
+velo.addEventListener("click", chiudi);
+document.getElementById("chiudi").addEventListener("click", chiudi);
+addEventListener("keydown", e => { if (e.key === "Escape" && !modale.hidden) chiudi(); });
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-apre]");
+  if (b) { e.preventDefault(); apri(b.dataset.apre); }
+});
+
+/* ═══════════ lingue e barra ═══════════ */
+const ordine = ["it","en","es","fr","de"];
+document.getElementById("langs").innerHTML = ordine.map(l =>
+  '<button type="button" data-l="'+l+'" title="'+T[l].lingua+'">'+T[l].nome+'</button>').join("");
+document.getElementById("langs").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  try { localStorage.setItem("rss-lingua", b.dataset.l); } catch (_) {}
+  if (!modale.hidden) chiudi();
+  costruisci(b.dataset.l);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const barraAlta = document.getElementById("top");
+const posa = () => barraAlta.classList.toggle("posata", scrollY > 40);
+addEventListener("scroll", posa, { passive: true });
+
+if (window.claude && typeof window.claude.use === "function") {
+  window.claude.use("downloads").then(d => { salvataggio = d; }).catch(() => {});
+}
+
+let avvio = "it";
+try {
+  const salvata = localStorage.getItem("rss-lingua");
+  if (salvata && T[salvata]) avvio = salvata;
+  else { const n = (navigator.language || "it").slice(0,2).toLowerCase(); if (T[n]) avvio = n; }
+} catch (_) {
+  const n = (navigator.language || "it").slice(0,2).toLowerCase(); if (T[n]) avvio = n;
+}
+costruisci(avvio);
+posa();
+</script>
