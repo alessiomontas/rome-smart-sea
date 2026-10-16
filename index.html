@@ -952,7 +952,13 @@ function apri(chiave){
       if (salvataggio) {
         const blob = await (await fetch(U.video)).blob();
         await salvataggio.save({ filename:"rome-smart-sea-guida-accesso.mp4", data: blob });
-      } else { window.open(U.video, "_blank", "noopener"); }
+      } else {
+        /* Fuori da claude.ai (per esempio su GitHub Pages) il file sta sullo stesso
+           indirizzo: basta un collegamento con `download` e il telefono lo salva. */
+        const a = document.createElement("a");
+        a.href = U.video; a.download = "rome-smart-sea-guida-accesso.mp4";
+        document.body.appendChild(a); a.click(); a.remove();
+      }
     } catch (e) { /* ha detto di no, o non si può: si torna com'era */ }
     giu.innerHTML = era; giu.disabled = false;
   });
