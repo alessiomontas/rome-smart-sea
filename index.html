@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rome Smart Sea</title>
 <meta name="description" content="La guida dell'appartamento Rome Smart Sea — Via delle Rande 6, Edificio A, Interno 8, Lido di Ostia.">
 <meta name="theme-color" content="#1A1713">
@@ -11,7 +16,9 @@
   --ink:#2B251E; --ink-2:#6E6355; --ink-3:#A2988A;
   --hair:#E8E1D4; --hair-2:#F0EADE;
   --gold:#A8843F; --gold-lit:#C9A769; --gold-wash:#F6EFDE;
-  --sage:#6F7D66; --terra:#A3493A; --ico:#DFD2B6;
+  --sage:#6F7D66; --terra:#A3493A;
+  --tessera:#EFE7D7; --tessera-ink:#2B251E; --tessera-ink-2:#80745F;
+  --tessera-filo:#DFD3BC; --ico:#C4B192; --tessera-segno:#FDFAF4;
   --glass:rgba(26,23,19,.76);
   --wifi-bg:#2B251E; --wifi-fg:#FBF8F3;
   --morbida:0 1px 2px rgba(43,37,30,.04),0 10px 30px rgba(43,37,30,.07);
@@ -25,7 +32,7 @@
     --ink:#F4EFE5; --ink-2:#C0B5A3; --ink-3:#8C8273;
     --hair:#342D23; --hair-2:#2A241B;
     --gold:#CFAC67; --gold-lit:#E0C38A; --gold-wash:#2C2518;
-    --sage:#93A189; --terra:#DA8571; --ico:#4C4232;
+    --sage:#93A189; --terra:#DA8571;
     --wifi-bg:#262118; --wifi-fg:#F4EFE5;
     --morbida:0 1px 2px rgba(0,0,0,.4),0 12px 36px rgba(0,0,0,.45);
   }
@@ -35,7 +42,7 @@
   --ink:#F4EFE5; --ink-2:#C0B5A3; --ink-3:#8C8273;
   --hair:#342D23; --hair-2:#2A241B;
   --gold:#CFAC67; --gold-lit:#E0C38A; --gold-wash:#2C2518;
-  --sage:#93A189; --terra:#DA8571; --ico:#4C4232;
+  --sage:#93A189; --terra:#DA8571;
   --wifi-bg:#262118; --wifi-fg:#F4EFE5;
   --morbida:0 1px 2px rgba(0,0,0,.4),0 12px 36px rgba(0,0,0,.45);
 }
@@ -155,28 +162,28 @@ img,video{display:block}
 
 /* le tessere col disegno: niente fotografia, un segno appena piu' chiaro del fondo */
 .cat.disegnata{aspect-ratio:1/1;display:flex;flex-direction:column;padding:15px;
-  background:var(--surface-2);border:1px solid var(--hair-2);box-shadow:none}
+  background:var(--tessera);border:1px solid var(--tessera-filo);box-shadow:none}
 .cat.disegnata .disegno{flex:1;width:100%;display:grid;place-items:center}
 .cat.disegnata .disegno svg{width:60px;height:60px;stroke:var(--ico);stroke-width:1;
   fill:none;stroke-linecap:round;stroke-linejoin:round}
-.cat.disegnata .lab{position:static;padding:0;width:100%;color:var(--ink)}
-.cat.disegnata .nome{color:var(--ink);font-size:16px}
-.cat.disegnata .sotto{color:var(--ink-3)}
-.cat.disegnata .segno{background:var(--surface);backdrop-filter:none;-webkit-backdrop-filter:none}
-.cat.disegnata .segno svg{stroke:var(--ink-3);width:12px;height:12px}
+.cat.disegnata .lab{position:static;padding:0;width:100%;color:var(--tessera-ink)}
+.cat.disegnata .nome{color:var(--tessera-ink);font-size:16px}
+.cat.disegnata .sotto{color:var(--tessera-ink-2)}
+.cat.disegnata .segno{background:var(--tessera-segno);backdrop-filter:none;-webkit-backdrop-filter:none}
+.cat.disegnata .segno svg{stroke:var(--tessera-ink-2);width:12px;height:12px}
 
 /* la scheda sobria delle emergenze */
 .cat.sos{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:16px;
-  background:var(--surface);border:1px solid var(--hair);box-shadow:none}
+  background:var(--tessera);border:1px solid var(--tessera-filo);box-shadow:none}
 .cat.sos .bollo{width:40px;height:40px;flex:0 0 40px;border-radius:50%;
-  background:color-mix(in srgb,var(--terra) 12%,transparent);display:grid;place-items:center}
-.cat.sos .bollo svg{width:19px;height:19px;stroke:var(--terra);stroke-width:1.8;fill:none;
+  background:rgba(163,73,58,.14);display:grid;place-items:center}
+.cat.sos .bollo svg{width:19px;height:19px;stroke:#A3493A;stroke-width:1.8;fill:none;
   stroke-linecap:round}
-.cat.sos .lab{position:static;padding:0;color:var(--ink);flex:1}
-.cat.sos .nome{font-size:16px;color:var(--ink)}
-.cat.sos .sotto{color:var(--ink-3);font-variant-numeric:tabular-nums}
-.cat.sos .segno{position:static;background:var(--surface-2)}
-.cat.sos .segno svg{stroke:var(--ink-3)}
+.cat.sos .lab{position:static;padding:0;color:var(--tessera-ink);flex:1}
+.cat.sos .nome{font-size:16px;color:var(--tessera-ink)}
+.cat.sos .sotto{color:var(--tessera-ink-2);font-variant-numeric:tabular-nums}
+.cat.sos .segno{position:static;background:var(--tessera-segno)}
+.cat.sos .segno svg{stroke:var(--tessera-ink-2)}
 
 /* ═══════════ la finestra ═══════════ */
 .velo{position:fixed;inset:0;z-index:60;background:rgba(18,15,11,.5);
@@ -348,6 +355,9 @@ noscript .ns{position:relative;z-index:1;max-width:var(--col);margin:0 auto;
   background:var(--surface);border-radius:22px;padding:24px;font-size:15px;line-height:1.8}
 @media (min-width:560px){ :root{--gut:30px} .hero{min-height:min(46svh,420px)} }
 </style>
+
+</head>
+<body>
 
 <div class="backdrop" aria-hidden="true">
   <figure style="background-image:url(img/sfondo-1.jpg)"></figure>
@@ -1009,3 +1019,6 @@ try {
 costruisci(avvio);
 posa();
 </script>
+
+</body>
+</html>
